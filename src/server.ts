@@ -1,10 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import {Router,Request,Response} from 'express';
 // require('./config/db')
-// require('dotenv').config({ path: './config/.env' });
-
-require('dotenv').config() ;
+require('dotenv').config({ path: './config/.env' });
 
 (async () => {
 
@@ -17,8 +16,8 @@ require('dotenv').config() ;
   app.use(bodyParser.json());
 
 
-  app.get('/filteredimage', async (req, res) => {
-    let {image_url} = req.query;
+  app.get('/filteredimage', async (req: Request, res: Response) => {
+    const image_url = req.query.image_url.toString();
 
     if (!image_url) {
       return res.status(422).send('Image  is required');
