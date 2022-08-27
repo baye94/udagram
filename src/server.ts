@@ -1,8 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
-require('./config/db')
-require('dotenv').config({ path: './config/.env' });
+// require('./config/db')
+// require('dotenv').config({ path: './config/.env' });
+
+require('dotenv').config() ;
 
 (async () => {
 
@@ -52,6 +54,6 @@ require('dotenv').config({ path: './config/.env' });
   
 
   // Start the Server
-  const port = process.env.Port || 8080;;
+  const port = process.env.PORT || 8080;;
   app.listen(port, () => { console.log('listening on port ' + port) })
 })();
