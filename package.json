@@ -30,7 +30,7 @@
   "dependencies": {
     "dotenv": "^16.0.2",
     "express": "^4.17.1",
-    "jimp": "^0.16.0",
+    "jimp": "^0.16.2",
     "jpeg-js": "^0.4.4",
     "lodash": "^4.17.15",
     "rimraf": "^3.0.2"
